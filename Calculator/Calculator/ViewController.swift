@@ -76,13 +76,19 @@ class ViewController: UIViewController
             enter()
         }
     }
-
+    
     var operandStack = Array<Double>()
 
     @IBAction func enter() {
         userIsInTheMiddleOfTypingANumber = false
         operandStack.append(displayValue)
         println("operandStack = \(operandStack)")
+    }
+    
+    @IBAction func clearAll() {
+        display.text = "0"
+        operandStack = Array<Double>()
+        userIsInTheMiddleOfTypingANumber = false
     }
     
     var displayValue: Double {
