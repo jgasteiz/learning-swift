@@ -64,14 +64,14 @@ class ViewController: UIViewController
     
     var displayValue: Double? {
         get {
-            var numberFormatter = NSNumberFormatter()
-            if let result = numberFormatter.numberFromString(display.text!) {
-                return result.doubleValue
-            }
-            return 0
+            return NSNumberFormatter().numberFromString(display.text!)?.doubleValue
         }
         set {
-            display.text = "\(newValue!)"
+            if newValue != nil {
+                display.text = "\(newValue!)"
+            } else {
+                display.text = "0"
+            }
             userIsInTheMiddleOfTypingANumber = false
         }
     }
