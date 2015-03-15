@@ -35,25 +35,17 @@ class ViewController: UIViewController
         }
     }
 
-    @IBAction func appendPi() {
-        userIsInTheMiddleOfTypingANumber = false
-        displayValue = brain.pushOperand(M_PI)
-    }
-
-
     @IBAction func operate(sender: UIButton) {
         if userIsInTheMiddleOfTypingANumber {
-            enter()
+            brain.pushOperand(displayValue!)
         }
-        if let operation = sender.currentTitle {
-            displayValue = brain.performOperation(operation)
-        }
+        brain.pushOperator(sender.currentTitle!)
+        userIsInTheMiddleOfTypingANumber = false
     }
 
-
-    @IBAction func enter() {
+    @IBAction func equals() {
         userIsInTheMiddleOfTypingANumber = false
-        displayValue = brain.pushOperand(displayValue!)
+        displayValue = brain.equals(displayValue!)
     }
     
     @IBAction func clearAll() {

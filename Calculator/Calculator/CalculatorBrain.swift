@@ -82,22 +82,46 @@ class CalculatorBrain
         return result
     }
 
-    func pushOperand(operand: Double) -> Double? {
+    func pushOperand(operand: Double) {
         opStack.append(Op.Operand(operand))
         println("\(opStack) = \(operand) pushed")
-        return evaluate()
     }
 
-    func performOperation(symbol: String) -> Double? {
+    func pushOperator(symbol: String) {
         if let operation = knownOps[symbol] {
             opStack.append(operation)
         }
-        return evaluate()
+        println("\(opStack) = \(symbol) operator pushed")
     }
 
     func clearStack() {
         opStack = [Op]()
         println("\(opStack)")
+    }
+
+    func equals(operand: Double) -> Double? {
+        let symbol = opStack.removeLast().description
+        opStack.append(Op.Operand(operand))
+
+        if let operation = knownOps[symbol] {
+            opStack.append(operation)
+        } else {
+            println("\(opStack)")
+            return nil
+        }
+
+        println("Calculating \(opStack)")
+
+        let result = evaluate()
+        opStack = [Op]()
+        if result != nil {
+            opStack.append(Op.Operand(result!))
+        } else {
+            opStack.append(Op.Operand(0))
+        }
+
+        println("\(opStack)")
+        return result
     }
 }
 
