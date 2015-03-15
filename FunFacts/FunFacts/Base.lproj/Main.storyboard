@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FunFacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EGQ-P7-0lg"/>
+                        <viewControllerLayoutGuide type="bottom" id="uqG-Ja-crs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yij-7x-MEs">
+                                <rect key="frame" x="44" y="488" width="232" height="60"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="79C-eO-gbK"/>
+                                    <constraint firstAttribute="width" constant="232" id="Y3r-WG-vw3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <color key="tintColor" red="0.3529411764705882" green="0.73333333333333328" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Show Another Fun Fact">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getFunFact" destination="BYZ-38-t0r" eventType="touchUpInside" id="ISL-0c-1nT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you know?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9D-Cg-293">
+                                <rect key="frame" x="44" y="28" width="116" height="22"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zH4-PE-lcu" propertyAccessControl="none">
+                                <rect key="frame" x="44" y="110" width="232" height="290"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="232" id="kvK-3S-ylS"/>
+                                    <constraint firstAttribute="height" constant="290" id="lhn-uf-4ZH"/>
+                                </constraints>
+                                <string key="text">Many sharks lay eggs, but hammerheads give birth to live babies that look like very small duplicates of their parents. Young hammerheads are usually born headfirst, with the tip of their hammer-shaped head folded backward to make them more streamlined for birth.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.3529411764705882" green="0.73333333333333328" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Yij-7x-MEs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="28" id="0AG-mH-nCd"/>
+                            <constraint firstItem="zH4-PE-lcu" firstAttribute="top" secondItem="EGQ-P7-0lg" secondAttribute="bottom" constant="90" id="BgB-Be-1wT"/>
+                            <constraint firstItem="zH4-PE-lcu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="28" id="HlD-BT-zyw"/>
+                            <constraint firstItem="n9D-Cg-293" firstAttribute="top" secondItem="EGQ-P7-0lg" secondAttribute="bottom" constant="8" id="HzJ-X7-1M1"/>
+                            <constraint firstItem="uqG-Ja-crs" firstAttribute="top" secondItem="Yij-7x-MEs" secondAttribute="bottom" constant="20" id="Q85-DH-hAf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Yij-7x-MEs" secondAttribute="trailing" constant="28" id="fed-od-BU2"/>
+                            <constraint firstItem="n9D-Cg-293" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="28" id="gOZ-Z5-Itw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zH4-PE-lcu" secondAttribute="trailing" constant="28" id="njL-Ba-BbH"/>
+                            <constraint firstItem="uqG-Ja-crs" firstAttribute="top" secondItem="zH4-PE-lcu" secondAttribute="bottom" constant="168" id="q43-1D-0tz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="funFactButton" destination="Yij-7x-MEs" id="evA-Mr-gzf"/>
+                        <outlet property="funFactLabel" destination="zH4-PE-lcu" id="KMi-7v-Poa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="228" y="347"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
