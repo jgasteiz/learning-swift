@@ -22,9 +22,7 @@ struct Current {
         let currentWeather = weatherDictionary["currently"] as NSDictionary
 
         temperature = currentWeather["temperature"] as Int
-        temperature = (temperature -
-
-            32) * 5/9
+        temperature = (temperature - 32) * 5/9
         humidity = currentWeather["humidity"] as Double
         precipProbability = currentWeather["precipProbability"] as Double
         summary = currentWeather["summary"] as String

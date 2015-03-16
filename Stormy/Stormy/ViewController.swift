@@ -18,12 +18,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var precipitationLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
-
+    @IBOutlet weak var refreshButton: UIButton!
+    @IBOutlet weak var refreshActivityIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
+        refreshActivityIndicator.hidden = true
+        getCurrentWeatherData()
+    }
+
+    func getCurrentWeatherData() {
         let baseURL = NSURL(string: "https://api.forecast.io/forecast/\(apiKey)/")!
         let forecastURL = NSURL(string: "51.583401,-0.222730", relativeToURL: baseURL)!
 
@@ -44,11 +50,41 @@ class ViewController: UIViewController {
                     self.humidityLabel.text = "\(currentWeather.humidity)"
                     self.precipitationLabel.text = "\(currentWeather.precipProbability)"
                     self.summaryLabel.text = "\(currentWeather.summary)"
+
+                    self.hideRefreshAnimation()
+                })
+            } else {
+                let networkIssueController = UIAlertController(title: "Error", message: "Unable to load data, there's a connectivity error.", preferredStyle: .Alert)
+
+                let okButton = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                networkIssueController.addAction(okButton)
+
+                self.presentViewController(networkIssueController, animated: true, completion: nil)
+
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.hideRefreshAnimation()
                 })
             }
         })
         downloadTask.resume()
+    }
 
+    @IBAction func refresh() {
+        showRefreshAnimation()
+        getCurrentWeatherData()
+    }
+
+    func showRefreshAnimation() {
+        refreshActivityIndicator.hidden = false
+        refreshActivityIndicator.startAnimating()
+        refreshButton.hidden = true
+
+    }
+
+    func hideRefreshAnimation() {
+        refreshButton.hidden = false
+        refreshActivityIndicator.hidden = true
+        refreshActivityIndicator.stopAnimating()
     }
 
     override func didReceiveMemoryWarning() {
