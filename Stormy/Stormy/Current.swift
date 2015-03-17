@@ -22,7 +22,6 @@ struct Current {
         let currentWeather = weatherDictionary["currently"] as NSDictionary
 
         temperature = currentWeather["temperature"] as Int
-        temperature = (temperature - 32) * 5/9
         humidity = currentWeather["humidity"] as Double
         precipProbability = currentWeather["precipProbability"] as Double
         summary = currentWeather["summary"] as String
@@ -42,6 +41,10 @@ struct Current {
         dateFormatter.timeStyle = .ShortStyle
 
         return dateFormatter.stringFromDate(weatherDate)
+    }
+
+    func getTempCelsius() -> Int {
+        return (temperature - 32) * 5/9
     }
 
     func weatherIconFromString(stringIcon: String) -> UIImage {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5919EE8E1AB792B300E2C4C9 /* ForecastIOTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5919EE8D1AB792B300E2C4C9 /* ForecastIOTask.swift */; };
 		59713D7E1AB6120F00FED73F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59713D7D1AB6120F00FED73F /* AppDelegate.swift */; };
 		59713D801AB6120F00FED73F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59713D7F1AB6120F00FED73F /* ViewController.swift */; };
 		59713D831AB6120F00FED73F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59713D811AB6120F00FED73F /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5919EE8D1AB792B300E2C4C9 /* ForecastIOTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastIOTask.swift; sourceTree = "<group>"; };
 		59713D781AB6120F00FED73F /* Stormy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stormy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59713D7C1AB6120F00FED73F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59713D7D1AB6120F00FED73F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				59713D861AB6120F00FED73F /* LaunchScreen.xib */,
 				59713D7B1AB6120F00FED73F /* Supporting Files */,
 				59713D9F1AB6278600FED73F /* Current.swift */,
+				5919EE8D1AB792B300E2C4C9 /* ForecastIOTask.swift */,
 			);
 			path = Stormy;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59713DA01AB6278600FED73F /* Current.swift in Sources */,
+				5919EE8E1AB792B300E2C4C9 /* ForecastIOTask.swift in Sources */,
 				59713D801AB6120F00FED73F /* ViewController.swift in Sources */,
 				59713D7E1AB6120F00FED73F /* AppDelegate.swift in Sources */,
 			);
@@ -421,6 +425,7 @@
 				59713D991AB6120F00FED73F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		59713D9A1AB6120F00FED73F /* Build configuration list for PBXNativeTarget "StormyTests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +434,7 @@
 				59713D9C1AB6120F00FED73F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
