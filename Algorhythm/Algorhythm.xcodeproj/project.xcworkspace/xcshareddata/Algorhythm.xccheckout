@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>86360EFC-339E-4D71-BE94-2B7C4D3AF7BA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Algorhythm</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>71E3801800EC38C3112071CF437CE38917F797BB</key>
+		<string>https://github.com/jgasteiz/learning-swift.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Algorhythm/Algorhythm.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>71E3801800EC38C3112071CF437CE38917F797BB</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jgasteiz/learning-swift.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>71E3801800EC38C3112071CF437CE38917F797BB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>71E3801800EC38C3112071CF437CE38917F797BB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>learning-swift</string>
+		</dict>
+	</array>
+</dict>
+</plist>
