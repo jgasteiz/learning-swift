@@ -43,36 +43,49 @@ struct Current {
         return dateFormatter.stringFromDate(weatherDate)
     }
 
-    func getTempCelsius() -> Int {
-        return (temperature - 32) * 5/9
+    func getTemperature() -> Int {
+        var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        var displayTemperature: Int = 0
+        
+        switch defaults.stringForKey("units")! {
+            case "celsius":
+                displayTemperature = (temperature - 32) * 5/9
+            case "fahrenheit":
+                displayTemperature = temperature
+            case "kelvin":
+                displayTemperature = (temperature - 32) * 5/9 + 273
+            default:
+                displayTemperature = temperature
+        }
+        return displayTemperature
     }
 
     func weatherIconFromString(stringIcon: String) -> UIImage {
         var imageName: String
 
         switch stringIcon {
-        case "clear-day":
-            imageName = "clear-day"
-        case "clear-night":
-            imageName = "clear-night"
-        case "rain":
-            imageName = "rain"
-        case "snow":
-            imageName = "snow"
-        case "sleet":
-            imageName = "sleet"
-        case "wind":
-            imageName = "wind"
-        case "fog":
-            imageName = "fog"
-        case "cloudy":
-            imageName = "cloudy"
-        case "partly-cloudy-day":
-            imageName = "partly-cloudy"
-        case "partly-cloudy-night":
-            imageName = "cloudy-night"
-        default:
-            imageName = "default"
+            case "clear-day":
+                imageName = "clear-day"
+            case "clear-night":
+                imageName = "clear-night"
+            case "rain":
+                imageName = "rain"
+            case "snow":
+                imageName = "snow"
+            case "sleet":
+                imageName = "sleet"
+            case "wind":
+                imageName = "wind"
+            case "fog":
+                imageName = "fog"
+            case "cloudy":
+                imageName = "cloudy"
+            case "partly-cloudy-day":
+                imageName = "partly-cloudy"
+            case "partly-cloudy-night":
+                imageName = "cloudy-night"
+            default:
+                imageName = "default"
         }
 
         return UIImage(named: imageName)!

@@ -62,7 +62,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
         let currentWeather = self.forecastIOTask.currentWeather!
 
-        self.temperatureLabel.text = "\(currentWeather.getTempCelsius())"
+        self.temperatureLabel.text = "\(currentWeather.getTemperature())"
         self.iconView.image = currentWeather.icon!
         self.currentTimeLabel.text = "At \(currentWeather.currentTime!) it is"
         self.humidityLabel.text = "\(currentWeather.humidity)"

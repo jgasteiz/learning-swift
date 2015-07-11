@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Temperature units</string>
+			<key>Key</key>
+			<string>units</string>
+			<key>DefaultValue</key>
+			<string>celsius</string>
+			<key>Titles</key>
+			<array>
+				<string>Celsius</string>
+				<string>Fahrenheit</string>
+				<string>Kelvin</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>celsius</string>
+				<string>fahrenheit</string>
+				<string>kelvin</string>
+			</array>
+		</dict>
+	</array>
+	<key>StringsTable</key>
+	<string>Root</string>
+</dict>
+</plist>
