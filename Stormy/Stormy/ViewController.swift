@@ -51,7 +51,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     func getWeatherData() {
-        forecastIOTask.getCurrentWeatherData(onGetWeatherDataSuccess, onGetWeatherDataError)
+        forecastIOTask.getCurrentWeatherData(onGetWeatherDataSuccess, onTaskError: onGetWeatherDataError)
     }
 
     func getWeatherData(latitude: Double, longitude: Double) {

@@ -27,12 +27,12 @@ class ForecastIOTask {
     {
         self.latitude = latitude
         self.longitude = longitude
-        getData(onTaskDone, onTaskError)
+        getData(onTaskDone, onTaskError: onTaskError)
     }
 
     func getCurrentWeatherData(onTaskDone: () -> Void, onTaskError: () -> Void)
     {
-        getData(onTaskDone, onTaskError)
+        getData(onTaskDone, onTaskError: onTaskError)
     }
 
     func getData(onTaskDone: () -> Void, onTaskError: () -> Void) {
@@ -44,7 +44,7 @@ class ForecastIOTask {
 
             if error == nil {
                 let dataObject = NSData(contentsOfURL: location)!
-                let weatherDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(dataObject, options: nil, error: nil) as NSDictionary
+                let weatherDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(dataObject, options: nil, error: nil) as! NSDictionary
 
                 self.currentWeather = Current(weatherDictionary: weatherDictionary)
 
