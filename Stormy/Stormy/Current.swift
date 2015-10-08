@@ -46,10 +46,11 @@ struct Current {
     func getTemperature() -> Int {
         var displayTemperature: Int = 0
         
-        // FIXME
-        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        let units: String = defaults.stringForKey("units")!
-        switch units {
+        var units: String? = NSUserDefaults.standardUserDefaults().stringForKey("units")
+        if units == nil {
+            units = "celsius"
+        }
+        switch units! {
             case "celsius":
                 displayTemperature = (temperature - 32) * 5/9
             case "fahrenheit":
@@ -59,6 +60,8 @@ struct Current {
             default:
                 displayTemperature = temperature
         }
+        
+        displayTemperature = (temperature - 32) * 5/9
         
         return displayTemperature
     }
