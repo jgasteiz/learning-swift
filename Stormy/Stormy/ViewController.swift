@@ -100,29 +100,29 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!)
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
 
-        CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler: {(placemarks, error)->Void in
+        CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: {(placemarks, error)->Void in
 
             if error != nil {
-                println("Reverse geocoder failed with error" + error.localizedDescription)
+                print("Reverse geocoder failed with error" + error!.localizedDescription)
                 return
             }
 
-            if placemarks.count > 0 {
-                 self.city.text = placemarks[0].locality
+            if placemarks!.count > 0 {
+                 self.city.text = placemarks![0].locality
             } else {
-                println("Problem with the data received from geocoder")
+                print("Problem with the data received from geocoder")
             }
         })
 
-        latitude = manager.location.coordinate.latitude
-        longitude = manager.location.coordinate.longitude
+        latitude = manager.location!.coordinate.latitude
+        longitude = manager.location!.coordinate.longitude
     }
 
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        println("Error while updating location \(error.localizedDescription)")
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Error while updating location \(error.localizedDescription)")
     }
 
 }
